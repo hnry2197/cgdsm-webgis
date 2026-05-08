@@ -1,0 +1,20 @@
+// firestore.rules
+// Deploy with: firebase deploy --only firestore:rules
+
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // ── Stations: public read, admin write only ──
+    match /stations/{docId} {
+      allow read: if true;
+      allow write: if request.auth != null;
+    }
+
+    // ── Sub-stations: public read, admin write only ──
+    match /substations/{docId} {
+      allow read: if true;
+      allow write: if request.auth != null;
+    }
+  }
+}

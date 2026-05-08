@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CGDSM WebGIS — Coast Guard District Southern Mindanao</title>
+
+  <!-- Leaflet CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <!-- Leaflet Fullscreen -->
+  <link rel="stylesheet" href="https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/leaflet.fullscreen.css" />
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=Source+Sans+3:ital,wght@0,300;0,400;0,600;1,300&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- ── TOP NAVBAR ── -->
+  <header class="navbar">
+    <div class="navbar-brand">
+      <img src="assets/cgdsm-seal.png" alt="CGDSM Seal" class="navbar-logo" onerror="this.style.display='none'" />
+      <div class="navbar-title">
+        <span class="navbar-title-main">CGDSM WebGIS</span>
+        <span class="navbar-title-sub">Coast Guard District Southern Mindanao — Region 12 AOR</span>
+      </div>
+    </div>
+    <nav class="navbar-actions">
+      <button id="btn-search-toggle" class="nav-btn" title="Search">⌕</button>
+      <button id="btn-legend-toggle" class="nav-btn" title="Legend">◧</button>
+      <a href="admin.html" class="nav-btn nav-btn-admin" title="Admin Dashboard">⚙ Admin</a>
+    </nav>
+  </header>
+
+  <!-- ── SEARCH PANEL ── -->
+  <div id="search-panel" class="side-panel search-panel hidden">
+    <div class="panel-header">
+      <h3>Search Stations</h3>
+      <button class="panel-close" id="search-close">✕</button>
+    </div>
+    <input type="text" id="search-input" placeholder="Type station or sub-station name…" class="search-input" />
+    <ul id="search-results" class="search-results"></ul>
+  </div>
+
+  <!-- ── LEGEND PANEL ── -->
+  <div id="legend-panel" class="side-panel legend-panel hidden">
+    <div class="panel-header">
+      <h3>Map Legend</h3>
+      <button class="panel-close" id="legend-close">✕</button>
+    </div>
+    <div id="legend-content" class="legend-content">
+      <p class="legend-loading">Loading stations…</p>
+    </div>
+  </div>
+
+  <!-- ── MAP CONTAINER ── -->
+  <div id="map"></div>
+
+  <!-- ── INFO POPUP PANEL ── -->
+  <div id="info-panel" class="info-panel hidden">
+    <button class="info-close" id="info-close">✕</button>
+    <div class="info-badge" id="info-badge">STATION</div>
+    <h2 id="info-name">—</h2>
+    <div class="info-meta">
+      <span id="info-province"></span>
+      <span id="info-municipality"></span>
+    </div>
+    <div class="info-divider"></div>
+    <div id="info-details" class="info-details"></div>
+    <div class="info-footer">
+      <span id="info-coords" class="info-coords"></span>
+    </div>
+  </div>
+
+  <!-- ── SCRIPTS ── -->
+  <!-- Leaflet JS -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <!-- Leaflet Fullscreen plugin -->
+  <script src="https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/Leaflet.fullscreen.min.js"></script>
+  <!-- PapaParse -->
+  <script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
+
+  <!-- Firebase v9 (compat mode for easy global use) -->
+  <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore-compat.js"></script>
+
+  <!-- App modules -->
+  <script src="js/firebase-config.js"></script>
+  <script src="js/map.js"></script>
+  <script src="js/stations.js"></script>
+  <script src="js/ui.js"></script>
+</body>
+</html>

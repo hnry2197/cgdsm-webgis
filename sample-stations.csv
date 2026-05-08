@@ -1,0 +1,11 @@
+name,type,province,municipality,latitude,longitude,parentStation,color,status,description
+CG Station General Santos City,station,South Cotabato,,6.1164,125.1716,,#0057a8,operational,"Commanding Officer: CDR Juan dela Cruz. Covers Sarangani Bay. 45 personnel assigned."
+CG Station Cotabato City,station,Maguindanao,,7.2122,124.2461,,#c9943a,operational,"Commanding Officer: CDR Maria Santos. Covers Mindanao River Basin. 38 personnel."
+CG Station Sultan Kudarat,station,Sultan Kudarat,,6.5000,124.0000,,#2db87a,operational,"Commanding Officer: CDR Pedro Reyes. Covers Moro Gulf coastline. 30 personnel."
+CG Station Sarangani,station,Sarangani,,5.9000,125.4000,,#9b59b6,operational,"Commanding Officer: LTCDR Ana Lopez. Covers Davao Gulf-Sarangani interface. 28 personnel."
+CG Sub-Station Koronadal,substation,South Cotabato,Koronadal City,6.5020,124.8499,CG Station General Santos City,#0057a8,operational,"OIC: LTJG Roberto Cruz. 12 personnel. Search and rescue capable."
+CG Sub-Station Polomolok,substation,South Cotabato,Polomolok,6.2167,125.0667,CG Station General Santos City,#0057a8,operational,"OIC: ENS Mario Garcia. 8 personnel. Harbor patrol operations."
+CG Sub-Station Marbel,substation,South Cotabato,Norala,6.3000,124.8500,CG Station General Santos City,#0057a8,limited,"OIC: CPO Jose Reyes. 6 personnel. Limited search and rescue."
+CG Sub-Station Lebak,substation,Sultan Kudarat,Lebak,6.6536,124.0547,CG Station Sultan Kudarat,#2db87a,operational,"OIC: LTJG Ana Reyes. 10 personnel. River patrol unit."
+CG Sub-Station Isulan,substation,Sultan Kudarat,Isulan,6.6333,124.6000,CG Station Sultan Kudarat,#2db87a,operational,"OIC: ENS Carlos Torres. 7 personnel."
+CG Sub-Station Maasim,substation,Sarangani,Maasim,5.8833,125.3833,CG Station Sarangani,#9b59b6,operational,"OIC: LTJG Rita Santos. 9 personnel. Coastal monitoring."
