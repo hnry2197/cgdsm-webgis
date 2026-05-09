@@ -127,7 +127,21 @@ function buildLegend() {
   const container = document.getElementById("legend-content");
   if (!container) return;
 
-  const stations = Object.values(stationsCache).map(c => c.data);
+  const ORDER = [
+  "CGD Southern Mindanao",
+  "CGS Sultan Kudarat",
+  "CGS Eastern Sarangani",
+  "CGS Western Sarangani",
+  "CGS Gensan",
+];
+
+const stations = Object.values(stationsCache)
+  .map(c => c.data)
+  .sort((a, b) => {
+    const ai = ORDER.indexOf(a.name);
+    const bi = ORDER.indexOf(b.name);
+    return (ai === -1 ? 999 : ai) - (bi === -1 ? 999 : bi);
+  });
   if (stations.length === 0) {
     container.innerHTML = '<p class="legend-loading">No stations loaded.</p>';
     return;
